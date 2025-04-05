@@ -6,8 +6,9 @@ First, run the development server:
 
 ```bash
 make sure you install node JS
+Git clone https://github.com/Tyler-Vibe/SimplyTickets/
 run
-npm install in the project folder
+npm install in the project folder -SimplyTickets
 then run
 npx prisma generate
 then run
