@@ -7,8 +7,10 @@ First, run the development server:
 ```bash
 make sure you install node JS
 run
-npm -i in the project folder
-then you can run
+npm install in the project folder
+then run
+npx prisma generate
+then run
 npm run dev
 # or
 yarn dev
