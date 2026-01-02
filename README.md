@@ -4,14 +4,21 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 First, run the development server:
 
+Make sure you install node JS
+
 ```bash
-make sure you install node JS
-Git clone https://github.com/Tyler-Vibe/SimplyTickets/
-run
-npm install in the project folder -SimplyTickets
-then run
+git clone https://github.com/Tyler-Vibe/SimplyTickets/
+```
+Run:
+```bash
+npm install
+```
+Run:
+```bash
 npx prisma generate
-then run
+```
+Finally:
+```bash
 npm run dev
 ```
 
