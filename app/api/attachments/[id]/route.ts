@@ -6,9 +6,11 @@ import { notFound } from 'next/navigation';
 // Helper function to ensure uploads directory exists
 const UPLOADS_DIR = join(process.cwd(), 'uploads');
 
+import { NextRequest } from 'next/server';
+
 export async function GET(
-  request: Request,
-  context: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     // Ensure params.id exists and is a number
@@ -58,8 +60,8 @@ export async function GET(
 }
 
 export async function DELETE(
-  request: Request,
-  context: { params: { id: string } }
+  request: NextRequest,
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
     const { id: paramId } = await context.params;

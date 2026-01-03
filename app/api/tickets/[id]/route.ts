@@ -5,10 +5,10 @@ import { join } from 'path';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id: paramId } = await params;
+    const { id: paramId } = await context.params;
     const id = parseInt(paramId);
     
     if (isNaN(id)) {
@@ -41,10 +41,10 @@ export async function GET(
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id: paramId } = await params;
+    const { id: paramId } = await context.params;
     const id = parseInt(paramId);
     
     if (isNaN(id)) {
@@ -86,10 +86,10 @@ export async function DELETE(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id: paramId } = await params;
+    const { id: paramId } = await context.params;
     const id = parseInt(paramId);
 
     if (isNaN(id)) {

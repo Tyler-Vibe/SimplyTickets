@@ -3,10 +3,10 @@ import prisma from '@/lib/prisma';
 
 export async function POST(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
-    const { id: paramId } = await params;
+    const { id: paramId } = await context.params;
     const ticketId = parseInt(paramId);
     
     if (isNaN(ticketId)) {
